@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 7]> <html class="no-js ie6" lang="ja"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="ja"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="ja"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{block:SearchPage}{lang:Search results for SearchQuery} | {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+<meta name="description" content="{block:Description}{MetaDescription}{/block:Description}" />
+<meta name="author" content="Takeshi Takatsudo" />
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="format-detection" content="address=no" />
+<style>
+/**
+ * html5 boilerplate resets
+ */
+/* html5doctor.com Reset Stylesheet
+   html5doctor.com/html-5-reset-stylesheet */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ""; content: none; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+/* YUI developer.yahoo.com/yui/ */
+body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font-size:99%; }
+
+/* Normalize monospace sizing:
+   en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
+pre, code, kbd, samp { font-family: 'Courier New', monospace, sans-serif; }
+
+/* Prevent mobile zooming while remain desktop zooming: github.com/shichuan/mobile-html5-boilerplate/issues/closed#issue/14 */
+html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } 
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: none; }
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+/* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
+pre {
+  white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+  padding: 15px;
+}
+
+/* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
+textarea { overflow: auto; }
+
+/* Align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.iem7 input[type="checkbox"] { vertical-align: baseline; }
+
+/* Hand cursor on clickable input elements */
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* Colors for form validity */
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid {
+   border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
+}
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {  width: auto; overflow: visible; }
+
+/* Bicubic resizing for non-native sized IMG:
+   code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
+.iem7 img { -ms-interpolation-mode: bicubic; }
+
+/* misc */
+.iem7 legend { margin-left: -7px; }
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+
+
+/**
+ * Primary Styles
+ * Author: Takeshi Takatsudo (takazudo[at]gmail.com)
+ */
+
+/**
+ * global things
+ */
+.mod-all, select, input, textarea { 
+	color: #444; 
+	font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+html.os-win .mod-all,html.os-win select,html.os-win input,html.os-win textarea { 
+	/*
+		os-win will be attached via js.
+		windows' Hiragino rendering is awful.
+	*/
+	font-family:'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+}
+html,body{
+	background:#fff;
+}
+.mod-all{
+	font-size:1.1em;
+	line-height:1.5;
+	padding:0 15px 0 175px;
+}
+/* These selection declarations have to be separate
+   No text-shadow: twitter.com/miketaylr/status/12228805301
+   Also: hot pink! */
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+/* j.mp/webkit-tap-highlight-color */
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+/* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+/**
+ * modules
+ */
+.mod-header{
+	margin:0 0 10px;
+	padding:15px 0 10px;
+}
+	.mod-header h1{
+		font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+		font-size:2.5em;
+		padding:0 0 5px;
+		text-shadow: 1px 1px 0 #999;
+	}
+		.mod-header h1 a{
+			text-decoration:none;
+			color:#444;
+		}
+		.mod-header h1 a:hover{
+			text-decoration:underline;
+		}
+	.mod-header p{
+		padding:0 0 5px;
+		text-shadow: 1px 1px 0 #eee;
+	}
+	.mod-header nav{
+		padding:0 0 10px;
+	}
+		.mod-header nav ul{
+			list-style-type:none;
+			margin:0 0 0 -10px;
+			overflow:hidden;
+			*zoom:1; /* ie clear float */
+		}
+		.mod-header nav ul li{
+			float:left;
+			white-space:nowrap;
+			padding:0 0 0 10px;
+		}
+	.js .mod-header .search{
+		display:none;
+	}
+.mod-body{
+	margin:0 -15px 0 -175px;
+	padding:0 15px 0 0;
+	*zoom:1; /* ie */
+}
+.mod-post{
+	border-top:4px solid #444;
+	padding:15px 15px 20px 175px;
+	margin:0 -15px 0 0;
+	position:relative;
+	*zoom:1; /* ie */
+}
+	.mod-post .topline{
+		border-top:4px solid #a68d6b;
+		position:absolute;
+		left:0;
+		top:-4px;
+		width:175px;
+	}
+	.mod-post h1{
+		font-size:1.4em;
+		padding:0 0 .35em;
+		line-height:1.35;
+	}
+	.mod-post .info{
+		position:relative;
+		height:1px;
+		width:1px;
+	}
+		.mod-post .info .inner{
+			position:absolute;
+			left:-175px;
+			top:-4px;
+			padding:0 15px 10px 10px;
+			width:150px;
+			text-align:right;
+		}
+			.mod-post .info span{
+				display:block;
+			}
+			.mod-post .info .date{
+			}
+			.mod-post .info .permalink{
+			}
+	.mod-post .body{
+	}
+		.mod-post .body .video{
+			padding:0 0 1em;
+		}
+		.mod-post .body .img{
+			padding:0 0 1em;
+		}
+			.mod-post .body .img img{
+				vertical-align:top;
+				border:3px solid #444;
+			}
+		.mod-post .body p{
+			padding:0 0 1em;
+			max-width:650px;
+		}
+		.mod-post .body blockquote{
+			padding:0 0 0 15px;
+			margin:0 0 1em;
+			max-width:650px;
+			border-left:4px solid #999;
+		}
+		.mod-post .body cite{
+			padding:0 0 1.25em;
+			display:block;
+		}
+		.mod-post .body ul,
+		.mod-post .body ol{
+			max-width:650px;
+			padding:.25em 0 1em;
+		}
+			.mod-post .body ul li,
+			.mod-post .body ol li{
+				padding:0 0 .25em;
+			}
+		.mod-post .body .syntaxhighlighter{
+			margin:0 0 1em -175px;
+			*zoom:1; /* ie */
+		}
+.mod-pager{
+	padding:0 0 1.25em;
+}
+.mod-footer{
+	padding:0 0 10px;
+}
+	.mod-footer .goup{
+	}
+	.mod-footer .desc{
+	}
+	.mod-footer .powered{
+	}
+
+.mod-notes{
+	border:1px solid red;
+}
+	.mod-notes ol.notes{
+		list-style-type: none;
+		margin:0;
+		border-bottom: solid 1px #ccc;
+	}
+		.mod-notes ol.notes li.note {
+			border-top: solid 1px #ccc;
+			padding:10px;
+		}
+			.mod-notes ol.notes li.note a{
+				float:left;
+			}
+				.mod-notes ol.notes li.note img.avatar {
+					vertical-align: -4px;
+					margin-right: 10px;
+					width: 16px;
+					height: 16px;
+				}
+			.mod-notes ol.notes li.note span.action {
+				font-weight: bold;
+				display:block;
+				overflow:hidden;
+				*zoom:1; /* ie */
+				padding:0 0 0 10px;
+			}
+			/*
+			.mod-notes ol.notes li.note .answer_content {
+				font-weight: normal;
+			}
+			.mod-notes ol.notes li.note blockquote {
+				border-color: #eee;
+				padding: 4px 10px;
+				margin: 10px 0px 0px 25px;
+			}
+			.mod-notes ol.notes li.note blockquote a {
+				text-decoration: none;
+			}
+			*/
+
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+	line-height:1.2;
+	box-sizing: content-box;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	max-width:none !important;
+}
+.syntaxhighlighter {
+	position: relative;
+	background:#444;
+}
+.syntaxhighlighter.source {
+	overflow: hidden;
+}
+.syntaxhighlighter .bold {
+	font-weight: bold;
+}
+.syntaxhighlighter .italic {
+	font-style: italic;
+}
+.syntaxhighlighter .line {
+	white-space: pre;
+}
+.syntaxhighlighter table {
+	width:100%;
+}
+.syntaxhighlighter table caption {
+	text-align: left;
+	padding: .5em 0 0.5em 1em;
+}
+.syntaxhighlighter table td.code {
+	width: 100%;
+	padding:10px 0;
+}
+.syntaxhighlighter table td.code .container {
+	position: relative;
+}
+.syntaxhighlighter table td.code .container textarea {
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: white;
+	padding-left: 1em;
+	overflow: hidden;
+	white-space: pre;
+}
+.syntaxhighlighter table td.gutter .line {
+	text-align: right;
+	margin-top:1px;
+	width:155px;
+	padding:0 5px 0 0;
+}
+.syntaxhighlighter table td.code .line {
+	padding: 0 10px 0 15px;
+	border-top:1px solid #161616;
+}
+.syntaxhighlighter table td.gutter .line:first-child,
+.syntaxhighlighter table td.code .line:first-child {
+	border-top:none;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+	padding-left: 0em;
+}
+.syntaxhighlighter.show {
+display: block;
+}
+.syntaxhighlighter.collapsed table {
+display: none;
+}
+.syntaxhighlighter.collapsed .toolbar {
+padding: 0.1em 0.8em 0em 0.8em;
+		 font-size: 1em;
+position: static;
+width: auto;
+height: auto;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+display: inline;
+		 margin-right: 1em;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+padding: 0;
+display: none;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+display: inline;
+}
+.syntaxhighlighter .toolbar {
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	width: 11px;
+	height: 11px;
+	font-size: 10px;
+	z-index: 10;
+}
+.syntaxhighlighter .toolbar span.title {
+	display: inline;
+}
+.syntaxhighlighter .toolbar a {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 1px;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+display: none;
+}
+.syntaxhighlighter.ie {
+	font-size: .9em;
+padding: 1px 0 1px 0;
+}
+.syntaxhighlighter.ie .toolbar {
+	line-height: 8px;
+}
+.syntaxhighlighter.ie .toolbar a {
+	padding-top: 0px;
+}
+.syntaxhighlighter {
+	background-color: #242424;
+}
+.syntaxhighlighter .line.alt1 {
+	background-color: #242424;
+}
+.syntaxhighlighter .line.alt2 {
+	background-color: #242424;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+	background:#333;
+}
+.syntaxhighlighter .line.highlighted.number {
+	color: #fff;
+}
+.syntaxhighlighter table caption {
+	color: #fff;
+}
+.syntaxhighlighter .gutter {
+	color: #afafaf;
+	padding:10px 0;
+}
+.syntaxhighlighter .gutter .line {
+	border-right: 3px solid #ddd;
+}
+.syntaxhighlighter .gutter .line:first-child{
+	margin-top:-10px;
+	padding-top:10px;
+}
+.syntaxhighlighter .gutter .line:last-child{
+	margin-bottom:-10px;
+	padding-bottom:10px;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+	background-color: #444;
+	color: white;
+}
+.syntaxhighlighter.collapsed {
+overflow: visible;
+}
+.syntaxhighlighter.collapsed .toolbar {
+color: #fff;
+background: #444;
+border: 1px solid #fff;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+color: #e49147;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+color: red;
+}
+.syntaxhighlighter .toolbar {
+color: #fff;
+background: #444;
+border: 1px solid #fff;
+}
+.syntaxhighlighter .toolbar a {
+color: white;
+}
+.syntaxhighlighter .toolbar a:hover {
+color: #fff;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+color: #fff;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+color: #6fde6c;
+font-weight:bold;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+color: #e49147;
+}
+.syntaxhighlighter .keyword {
+color: #7777aa;
+}
+.syntaxhighlighter .preprocessor {
+color: gray;
+}
+.syntaxhighlighter .variable {
+color: #aa7700;
+}
+.syntaxhighlighter .value {
+color: #009900;
+}
+.syntaxhighlighter .functions {
+color: #ff1493;
+}
+.syntaxhighlighter .constants {
+color: #0066cc;
+}
+.syntaxhighlighter .script {
+	font-weight: bold;
+	color: #006699;
+	background-color: none;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+	color: gray;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+	color: #ff1493;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+	color: red;
+}
+.syntaxhighlighter .keyword {
+	font-weight: bold;
+}
+
+/* Media queries for responsive design
+   https://github.com/shichuan/mobile-html5-boilerplate/wiki/The-Style */
+
+/* Styles for desktop and large screen ----------- */
+
+/*styles for 800px and up!*/
+@media only screen and (max-width: 640px) {
+	.mod-all{
+		padding-left:15px;
+	}
+	.mod-post .info{
+		height:auto;
+		width:auto;
+		border-bottom:1px dotted #999;
+		border-top:1px dotted #999;
+		padding:.25em 0 .25em;
+		margin:0 0 .5em;
+	}
+		.mod-post .info .inner{
+			position:static;
+			width:auto;
+			padding:0;
+			width:auto;
+			text-align:left;
+		}
+		.mod-post .info span{
+			display:inline;
+		}
+		.mod-post .body .syntaxhighlighter{
+			margin-left:0;
+		}
+	.syntaxhighlighter table td.gutter{
+		display:none;
+	}
+}/*/mediaquery*/
+
+/*styles for 800px and up!*/
+@media only screen and (min-width: 800px) {
+  /* Styles */
+}/*/mediaquery*/
+
+/**
+ * Helper classes 
+ */
+	/* prevent callout */
+	.nocallout {-webkit-touch-callout: none;}
+
+	/* Text overflow with ellipsis */
+	.ellipsis {
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	  white-space: nowrap;
+	}
+
+	/* A hack for HTML5 contenteditable attribute on mobile */
+	textarea.contenteditable {-webkit-appearance: none;}
+
+	/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if they have been set as display: none */
+	.gifhidden {position: absolute; left: -100%;}
+
+	/* For image replacement */
+	.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+
+	/* Hide for both screenreaders and browsers:
+	   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+	.hidden { display: none; visibility: hidden; }
+
+	/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+	  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+	.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+	/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+	.visuallyhidden.focusable:active,
+	.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+	/* Hide visually and from screenreaders, but maintain layout */
+	.invisible { visibility: hidden; }
+
+	/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements.
+	   j.mp/bestclearfix */
+	.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+	.clearfix:after { clear: both; }
+
+	/* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
+	.clearfix { zoom: 1; }
+
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.js"></script>
+<script>window.jQuery || document.write("<script src='http://zudolab.net/tumblr.hamalog/js/libs/jquery-1.5.2.min.js'>\x3C/script>")</script>
+<script src="http://zudolab.net/tumblr.hamalog/js/libs/modernizr-custom.js"></script>
+<script src="http://zudolab.net/tumblr.hamalog/js/common.js"></script>
+</head>
+<body><div class="mod-all" id="all">
+
+<header class="mod-header">
+	<h1><a href="/">{Title}</a></h1>
+	<p class="description">{Description} [<a href="https://twitter.com/Takazudo/">@Takazudo</a>] [<a href="mailto:takazudo@gmail.com">takazudo@gmail.com</a>]</p>
+	<p class="hint">Hint: alt+/</p>
+	<form class="search" method="get" action="http://www.google.co.jp/search" id="search">
+		<input type="search" name="q" maxlength="255" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="hidden" name="oe" value="UTF-8">
+		<input type="hidden" name="hl" value="ja">
+		<input type="hidden" name="hl" value="ja">
+		<input type="hidden" name="as_sitesearch" value="hamalog.tumblr.com">
+		<input type="submit" name="btnG" value="検索">
+	</form>
+</header>
+
+<div class="mod-body" id="content">
+
+	{block:Posts}
+
+		{block:Text}
+			<section class="mod-post">
+				<b class="topline"></b>
+				{block:Title}<h1>{Title}</h1>{/block:Title}
+				<div class="info"><div class="inner">
+					{block:Date}<span class="date">{lang:This was posted TimeAgo}.</span>{/block:Date}
+					{block:IfDisqusShortname}<span class="comments">{lang:It has NoteCount notes and 0 comments}</span>{/block:IfDisqusShortname}
+					{block:IfNotDisqusShortname}<span class="comments">{lang:It has NoteCount notes}</span>{/block:IfNotDisqusShortname}
+					{block:Date}<span class="permalink"><a href="{Permalink}" class="permalink">#</a></span>{/block:Date}
+				</div></div>
+				<div class="body">
+					{Body}
+				<!-- /.body --></div>
+			</section>
+		{/block:Text}
+
+		{block:Photo}
+			<section class="mod-post post">
+				<b class="topline"></b>
+				<div class="info"><div class="inner">
+					{block:Date}<span class="date">{lang:This was posted TimeAgo}.</span>{/block:Date}
+					{block:IfDisqusShortname}<span class="comments">{lang:It has NoteCount notes and 0 comments}</span>{/block:IfDisqusShortname}
+					{block:IfNotDisqusShortname}<span class="comments">{lang:It has NoteCount notes}</span>{/block:IfNotDisqusShortname}
+					{block:Date}<span class="permalink"><a href="{Permalink}" class="permalink">#</a></span>{/block:Date}
+				</div></div>
+				<div class="body">
+					<div class="img">{LinkOpenTag}<img alt="{PhotoAlt}" src="{PhotoURL-500}"/>{LinkCloseTag}</div>
+					{block:Caption}<p>{Caption}</p>{/block:Caption}
+				<!-- /.body --></div>
+			</section>
+		{/block:Photo}
+
+		{block:Quote}
+			<section class="mod-post post">
+				<b class="topline"></b>
+				<div class="info"><div class="inner">
+					{block:Date}<span class="date">{lang:This was posted TimeAgo}.</span>{/block:Date}
+					{block:IfDisqusShortname}<span class="comments">{lang:It has NoteCount notes and 0 comments}</span>{/block:IfDisqusShortname}
+					{block:IfNotDisqusShortname}<span class="comments">{lang:It has NoteCount notes}</span>{/block:IfNotDisqusShortname}
+					{block:Date}<span class="permalink"><a href="{Permalink}" class="permalink">#</a></span>{/block:Date}
+				</div></div>
+				<div class="body">
+					<blockquote>{Quote}</blockquote>
+					{block:Source}<cite>from: {Source}</cite>{/block:Source}
+				<!-- /.body --></div>
+			</section>
+		{/block:Quote}
+
+		{block:Link}
+			<section class="mod-post post">
+				<b class="topline"></b>
+				<div class="info"><div class="inner">
+					{block:Date}<span class="date">{lang:This was posted TimeAgo}.</span>{/block:Date}
+					{block:IfDisqusShortname}<span class="comments">{lang:It has NoteCount notes and 0 comments}</span>{/block:IfDisqusShortname}
+					{block:IfNotDisqusShortname}<span class="comments">{lang:It has NoteCount notes}</span>{/block:IfNotDisqusShortname}
+					{block:Date}<span class="permalink"><a href="{Permalink}" class="permalink">#</a></span>{/block:Date}
+				</div></div>
+				<h1><a href="{URL}">{Name}</a></h1>
+				<div class="body">
+					{block:Description}<p>{Description}</p>{/block:Description}
+				<!-- /.body --></div>
+			</section>
+		{/block:Link}
+
+		{block:Video}
+			<section class="mod-post post">
+				<b class="topline"></b>
+				<div class="info"><div class="inner">
+					{block:Date}<span class="date">{lang:This was posted TimeAgo}.</span>{/block:Date}
+					{block:IfDisqusShortname}<span class="comments">{lang:It has NoteCount notes and 0 comments}</span>{/block:IfDisqusShortname}
+					{block:IfNotDisqusShortname}<span class="comments">{lang:It has NoteCount notes}</span>{/block:IfNotDisqusShortname}
+					{block:Date}<span class="permalink"><a href="{Permalink}" class="permalink">#</a></span>{/block:Date}
+				</div></div>
+				<h1><a href="{URL}">{Name}</a></h1>
+				<div class="body">
+					<div class="video">{Video-500}</div>
+					{block:Caption}<p>{Caption}</p>{/block:Caption}
+				<!-- /.body --></div>
+			</section>
+		{/block:Video}
+
+		{block:PostNotes}<div class="mod-notes">{PostNotes}</div>{/block:PostNotes}
+
+	{/block:Posts}
+
+	<div style="border:1px solid red;"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></div>
+
+	<!-- disqus comment -->
+	<script type="text/javascript">
+		var disqus_url = "{Permalink}";
+		var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";
+	</script>
+	{block:Permalink}
+		<div id="disqus_thread"></div>
+		<script>
+		(function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = 'http://takazudohamalog.disqus.com/embed.js';
+			$('head').append(dsq);
+		})();
+		</script>
+		<noscript>JavaScript onにするとコメントできます。</noscript>
+		<p><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a></p>
+	{/block:Permalink}
+	<script type="text/javascript">
+	var disqus_shortname = 'takazudohamalog';
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.src = 'http://takazudohamalog.disqus.com/count.js';
+		$('head').append(s);
+	}());
+	</script>
+	<!-- /disqus comment -->
+
+	{block:Pagination}
+		<div class="mod-pager" id="nav">
+		{block:PreviousPage}<a href="{PreviousPage}" class="prev">{lang:Previous page}</a>{/block:PreviousPage}
+		{block:NextPage}<a href="{NextPage}" class="next">{lang:Next page}</a>{/block:NextPage}
+		</div>
+	{/block:Pagination}
+
+<!-- /.mod-body --></div>
+
+<footer class="mod-footer">
+	<p class="goup"><a href="#all">ページの先頭へ</a></a>
+	<p class="powered">Powered by <a href="http://tumblr.com">Tumblr</a>  View some <a href="/archive">archived posts</a> if you please.</p>
+<!-- /.mod-footer --></footer>
+
+</div></body></html>
