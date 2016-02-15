@@ -9,7 +9,7 @@
 			console.log( Array.prototype.slice.call(arguments) );
 		}
 	};
-	
+
 	// make it safe to use console.log always
 	(function(b){function c(){}for(var d="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),a;a=d.pop();)b[a]=b[a]||c})(window.console=window.console||{});
 
@@ -21,17 +21,17 @@
 	Modernizr.load([
 		{
 			load: [
-				'http://zudolab.net/tumblr.hamalog/js/libs/mbp.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shCore.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushJScript.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushCss.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushXml.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushBash.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushPlain.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/syntaxhilighter/shBrushCoffeeScript.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/jquery.hotkeys.js',
-				'http://zudolab.net/tumblr.hamalog/js/libs/mbp.js',
-				'http://zudolab.net/tumblr.hamalog/js/mylibs/jquery.tinyscroller.js'
+				'http://takazudo.github.io/cdn-hamalog/js/libs/mbp.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shCore.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushJScript.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushCss.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushXml.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushBash.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushPlain.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/syntaxhilighter/shBrushCoffeeScript.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/jquery.hotkeys.js',
+				'http://takazudo.github.io/cdn-hamalog/js/libs/mbp.js',
+				'http://takazudo.github.io/cdn-hamalog/js/mylibs/jquery.tinyscroller.js'
 			],
 			complete: commonDOMContentLoaded
 		}
